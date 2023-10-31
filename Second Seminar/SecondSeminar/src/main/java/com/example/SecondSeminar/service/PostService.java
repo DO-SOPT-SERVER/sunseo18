@@ -3,6 +3,8 @@ package com.example.SecondSeminar.service;
 import com.example.SecondSeminar.controller.dto.request.post.PostCreateRequest;
 import com.example.SecondSeminar.controller.dto.request.post.PostGetResponse;
 import com.example.SecondSeminar.controller.dto.request.post.PostUpdateRequest;
+import com.example.SecondSeminar.domain.Category;
+import com.example.SecondSeminar.domain.CategoryId;
 import com.example.SecondSeminar.domain.Member;
 import com.example.SecondSeminar.domain.Post;
 import com.example.SecondSeminar.domain.repository.MemberJpaRepository;
@@ -19,15 +21,22 @@ public class PostService {
 
     private final PostJpaRepository postJpaRepository;
     private final MemberJpaRepository memberJpaRepository;
+    private final CategoryService categoryService;
+
 
     @Transactional
     public String create(PostCreateRequest request, Long memberId) {
         Member member = memberJpaRepository.findByIdOrThrowException(memberId);
+
+        CategoryId categoryId = new CategoryId(request.categoryId());
+        categoryService.getByCategoryId(new CategoryId(request.categoryId()));
+
         Post post = postJpaRepository.save(
                 Post.builder()
                         .member(member)
                         .title(request.title())
-                        .content(request.content()).build());
+                        .content(request.content())
+                        .categoryId(categoryId).build());
         return post.getId().toString();
     }
 
@@ -36,21 +45,13 @@ public class PostService {
         return postJpaRepository.
                 findAllByMemberId(member.getId()).
                 stream().
-                map(PostGetResponse::of).
+                map(post -> PostGetResponse.of(post, getCategoryByPost(post))).
                 toList();
-
-//        return postJpaRepository.
-//                findAllByMember(member).
-//                stream().
-//                map(PostGetResponse::of).
-//                toList();
-
-        // findByMemberID vs findByMember 왜 저는 쿼리문이 같죠...?
     }
 
-    public PostGetResponse getPost(Long postId) {
+    public PostGetResponse getPostById(Long postId) {
         Post post = postJpaRepository.findByIdOrThrowException(postId);
-        return PostGetResponse.of(post);
+        return PostGetResponse.of(post, getCategoryByPost(post));
     }
 
     @Transactional
@@ -63,5 +64,9 @@ public class PostService {
     public void deleteById(Long postId) {
         postJpaRepository.findByIdOrThrowException(postId);
         postJpaRepository.deleteById(postId);
+    }
+
+    private Category getCategoryByPost(Post post) {
+        return categoryService.getByCategoryId(post.getCategoryId());
     }
 }

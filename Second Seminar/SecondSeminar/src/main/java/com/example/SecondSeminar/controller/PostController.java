@@ -40,7 +40,7 @@ public class PostController {
 
     @GetMapping("{postId}")
     public ResponseEntity<PostGetResponse> getPostById(@PathVariable Long postId) {
-        return ResponseEntity.ok(postService.getPost(postId));
+        return ResponseEntity.ok(postService.getPostById(postId));
     }
 
     @PatchMapping("{postId}")
