@@ -1,14 +1,14 @@
-package com.example.SecondSeminar.Post.application;
+package com.example.SecondSeminar.post.application;
 
-import com.example.SecondSeminar.Post.dto.request.PostCreateRequest;
-import com.example.SecondSeminar.Post.dto.response.PostGetResponse;
-import com.example.SecondSeminar.Post.dto.request.PostUpdateRequest;
+import com.example.SecondSeminar.post.dto.request.PostCreateRequest;
+import com.example.SecondSeminar.post.dto.response.PostGetResponse;
+import com.example.SecondSeminar.post.dto.request.PostUpdateRequest;
 import com.example.SecondSeminar.category.domain.Category;
 import com.example.SecondSeminar.category.domain.CategoryId;
 import com.example.SecondSeminar.member.domain.Member;
-import com.example.SecondSeminar.Post.domain.Post;
+import com.example.SecondSeminar.post.domain.Post;
 import com.example.SecondSeminar.member.domain.MemberJpaRepository;
-import com.example.SecondSeminar.Post.domain.PostJpaRepository;
+import com.example.SecondSeminar.post.domain.PostJpaRepository;
 import com.example.SecondSeminar.category.application.CategoryService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

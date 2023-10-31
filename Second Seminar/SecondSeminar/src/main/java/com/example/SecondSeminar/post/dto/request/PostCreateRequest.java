@@ -1,4 +1,4 @@
-package com.example.SecondSeminar.Post.dto.request;
+package com.example.SecondSeminar.post.dto.request;
 
 import lombok.NonNull;
 

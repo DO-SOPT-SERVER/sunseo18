@@ -1,4 +1,4 @@
-package com.example.SecondSeminar.Post.exception;
+package com.example.SecondSeminar.post.exception;
 
 import com.example.SecondSeminar.common.exception.ExceptionType;
 import lombok.RequiredArgsConstructor;

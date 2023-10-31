@@ -1,9 +1,9 @@
-package com.example.SecondSeminar.Post.presentation;
+package com.example.SecondSeminar.post.presentation;
 
-import com.example.SecondSeminar.Post.dto.request.PostCreateRequest;
-import com.example.SecondSeminar.Post.dto.response.PostGetResponse;
-import com.example.SecondSeminar.Post.dto.request.PostUpdateRequest;
-import com.example.SecondSeminar.Post.application.PostService;
+import com.example.SecondSeminar.post.dto.request.PostCreateRequest;
+import com.example.SecondSeminar.post.dto.response.PostGetResponse;
+import com.example.SecondSeminar.post.dto.request.PostUpdateRequest;
+import com.example.SecondSeminar.post.application.PostService;
 import java.net.URI;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

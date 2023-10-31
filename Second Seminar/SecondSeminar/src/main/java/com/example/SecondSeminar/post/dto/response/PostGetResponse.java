@@ -1,8 +1,8 @@
-package com.example.SecondSeminar.Post.dto.response;
+package com.example.SecondSeminar.post.dto.response;
 
 import com.example.SecondSeminar.category.dto.response.CategoryResponse;
 import com.example.SecondSeminar.category.domain.Category;
-import com.example.SecondSeminar.Post.domain.Post;
+import com.example.SecondSeminar.post.domain.Post;
 
 public record PostGetResponse(
         Long id,

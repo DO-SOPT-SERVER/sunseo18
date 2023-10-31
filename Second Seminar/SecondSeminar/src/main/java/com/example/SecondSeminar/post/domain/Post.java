@@ -1,4 +1,4 @@
-package com.example.SecondSeminar.Post.domain;
+package com.example.SecondSeminar.post.domain;
 
 import com.example.SecondSeminar.common.entity.BaseTimeEntity;
 import com.example.SecondSeminar.category.domain.CategoryId;

@@ -1,8 +1,8 @@
-package com.example.SecondSeminar.Post.domain;
+package com.example.SecondSeminar.post.domain;
 
 import com.example.SecondSeminar.member.domain.Member;
-import com.example.SecondSeminar.Post.exception.PostExceptionType;
-import com.example.SecondSeminar.Post.exception.PostException;
+import com.example.SecondSeminar.post.exception.PostExceptionType;
+import com.example.SecondSeminar.post.exception.PostException;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
