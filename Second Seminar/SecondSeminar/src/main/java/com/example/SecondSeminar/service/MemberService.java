@@ -1,8 +1,8 @@
 package com.example.SecondSeminar.service;
 
-import com.example.SecondSeminar.controller.dto.request.MemberCreateRequest;
-import com.example.SecondSeminar.controller.dto.request.MemberProfileUpdateRequest;
-import com.example.SecondSeminar.controller.dto.response.MemberGetResponse;
+import com.example.SecondSeminar.controller.dto.request.member.MemberCreateRequest;
+import com.example.SecondSeminar.controller.dto.request.member.MemberProfileUpdateRequest;
+import com.example.SecondSeminar.controller.dto.response.member.MemberGetResponse;
 import com.example.SecondSeminar.domain.Member;
 import com.example.SecondSeminar.domain.SOPT;
 import com.example.SecondSeminar.domain.repository.MemberJpaRepository;

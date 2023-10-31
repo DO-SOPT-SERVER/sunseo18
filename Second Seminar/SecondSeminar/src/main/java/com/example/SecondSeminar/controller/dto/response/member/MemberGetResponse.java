@@ -1,4 +1,4 @@
-package com.example.SecondSeminar.controller.dto.response;
+package com.example.SecondSeminar.controller.dto.response.member;
 
 import com.example.SecondSeminar.domain.Member;
 import com.example.SecondSeminar.domain.SOPT;
