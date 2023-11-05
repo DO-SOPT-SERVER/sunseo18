@@ -30,7 +30,7 @@ public class PostService {
         Member member = memberJpaRepository.findByIdOrThrowException(memberId);
 
         CategoryId categoryId = new CategoryId(request.categoryId());
-        categoryService.getByCategoryId(new CategoryId(request.categoryId()));
+        categoryService.getByCategoryId(categoryId);
 
         Post post = postJpaRepository.save(
                 Post.builder()
