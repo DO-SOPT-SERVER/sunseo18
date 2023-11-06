@@ -1,4 +1,4 @@
-package com.example.SecondSeminarKotlin.member.presentation.dto.request
+package com.example.SecondSeminarKotlin.member.dto.request
 
 import com.example.SecondSeminarKotlin.member.domain.Part
 

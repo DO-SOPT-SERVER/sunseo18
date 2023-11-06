@@ -3,9 +3,9 @@ package com.example.SecondSeminarKotlin.member.application
 import com.example.SecondSeminarKotlin.member.domain.Member
 import com.example.SecondSeminarKotlin.member.domain.SOPT
 import com.example.SecondSeminarKotlin.member.domain.MemberJpaRepository
-import com.example.SecondSeminarKotlin.member.presentation.dto.request.MemberCreateRequest
-import com.example.SecondSeminarKotlin.member.presentation.dto.request.MemberProfileUpdateRequest
-import com.example.SecondSeminarKotlin.member.presentation.dto.response.MemberGetResponse
+import com.example.SecondSeminarKotlin.member.dto.request.MemberCreateRequest
+import com.example.SecondSeminarKotlin.member.dto.request.MemberProfileUpdateRequest
+import com.example.SecondSeminarKotlin.member.dto.response.MemberGetResponse
 import jakarta.persistence.EntityNotFoundException
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -47,6 +47,6 @@ class MemberService(
     fun deleteMember(memberId: Long) =
         memberJpaRepository.delete(findMemberById(memberId))
 
-    private fun findMemberById(memberId: Long): Member =
+    fun findMemberById(memberId: Long): Member =
         memberJpaRepository.findByIdOrNull(memberId) ?: throw EntityNotFoundException("존재하지 않는 회원입니다")
 }

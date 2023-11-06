@@ -1,4 +1,4 @@
-package com.example.SecondSeminarKotlin.member.presentation.dto.response
+package com.example.SecondSeminarKotlin.member.dto.response
 
 import com.example.SecondSeminarKotlin.member.domain.Member
 import com.example.SecondSeminarKotlin.member.domain.SOPT
