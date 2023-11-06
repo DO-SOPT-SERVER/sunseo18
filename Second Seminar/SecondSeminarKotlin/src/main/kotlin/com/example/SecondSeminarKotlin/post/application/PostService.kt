@@ -6,7 +6,8 @@ import com.example.SecondSeminarKotlin.post.domain.PostJpaRepository
 import com.example.SecondSeminarKotlin.post.dto.request.PostCreateRequest
 import com.example.SecondSeminarKotlin.post.dto.request.PostUpdateRequest
 import com.example.SecondSeminarKotlin.post.dto.response.PostGetResponse
-import jakarta.persistence.EntityNotFoundException
+import com.example.SecondSeminarKotlin.post.exception.PostException
+import com.example.SecondSeminarKotlin.post.exception.PostExceptionType
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -61,6 +62,6 @@ class PostService(
     }
 
     fun findPostById(postId: Long) =
-        postJpaRepository.findByIdOrNull(postId) ?: throw EntityNotFoundException("존재하지 않는 게시글입니다")
+        postJpaRepository.findByIdOrNull(postId) ?: throw PostException(PostExceptionType.NOT_FOUND_POST)
 
 }
