@@ -1,6 +1,6 @@
-package com.example.SecondSeminar.controller.dto.request;
+package com.example.SecondSeminar.member.dto.request;
 
-import com.example.SecondSeminar.domain.SOPT;
+import com.example.SecondSeminar.member.domain.SOPT;
 
 public record MemberCreateRequest(
         String name,

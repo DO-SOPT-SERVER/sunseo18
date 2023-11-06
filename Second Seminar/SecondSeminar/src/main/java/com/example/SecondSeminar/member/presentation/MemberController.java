@@ -1,9 +1,9 @@
-package com.example.SecondSeminar.controller;
+package com.example.SecondSeminar.member.presentation;
 
-import com.example.SecondSeminar.controller.dto.request.MemberCreateRequest;
-import com.example.SecondSeminar.controller.dto.request.MemberProfileUpdateRequest;
-import com.example.SecondSeminar.controller.dto.response.MemberGetResponse;
-import com.example.SecondSeminar.service.MemberService;
+import com.example.SecondSeminar.member.dto.request.MemberCreateRequest;
+import com.example.SecondSeminar.member.dto.request.MemberProfileUpdateRequest;
+import com.example.SecondSeminar.member.dto.response.MemberGetResponse;
+import com.example.SecondSeminar.member.application.MemberService;
 import java.net.URI;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -73,7 +73,7 @@ public class MemberController {
      * 특정 멤버를 삭제한다.
      */
     @DeleteMapping("/{memberId}")
-    public ResponseEntity deleteMember(@PathVariable Long memberId) {
+    public ResponseEntity<Void> deleteMember(@PathVariable Long memberId) {
         memberService.deleteMember(memberId);
         return ResponseEntity.noContent().build();
     }

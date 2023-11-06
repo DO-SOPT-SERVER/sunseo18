@@ -1,11 +1,11 @@
-package com.example.SecondSeminar.service;
+package com.example.SecondSeminar.member.application;
 
-import com.example.SecondSeminar.controller.dto.request.MemberCreateRequest;
-import com.example.SecondSeminar.controller.dto.request.MemberProfileUpdateRequest;
-import com.example.SecondSeminar.controller.dto.response.MemberGetResponse;
-import com.example.SecondSeminar.domain.Member;
-import com.example.SecondSeminar.domain.SOPT;
-import com.example.SecondSeminar.domain.repository.MemberJpaRepository;
+import com.example.SecondSeminar.member.dto.request.MemberCreateRequest;
+import com.example.SecondSeminar.member.dto.request.MemberProfileUpdateRequest;
+import com.example.SecondSeminar.member.dto.response.MemberGetResponse;
+import com.example.SecondSeminar.member.domain.Member;
+import com.example.SecondSeminar.member.domain.SOPT;
+import com.example.SecondSeminar.member.domain.MemberJpaRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

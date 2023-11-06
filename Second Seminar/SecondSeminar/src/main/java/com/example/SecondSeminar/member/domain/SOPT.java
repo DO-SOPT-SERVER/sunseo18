@@ -1,4 +1,4 @@
-package com.example.SecondSeminar.domain;
+package com.example.SecondSeminar.member.domain;
 
 import static jakarta.persistence.EnumType.STRING;
 

@@ -1,7 +1,7 @@
-package com.example.SecondSeminar.controller.dto.response;
+package com.example.SecondSeminar.member.dto.response;
 
-import com.example.SecondSeminar.domain.Member;
-import com.example.SecondSeminar.domain.SOPT;
+import com.example.SecondSeminar.member.domain.Member;
+import com.example.SecondSeminar.member.domain.SOPT;
 
 public record MemberGetResponse(
         String name,

@@ -1,4 +1,4 @@
-package com.example.SecondSeminar.domain;
+package com.example.SecondSeminar.member.domain;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
