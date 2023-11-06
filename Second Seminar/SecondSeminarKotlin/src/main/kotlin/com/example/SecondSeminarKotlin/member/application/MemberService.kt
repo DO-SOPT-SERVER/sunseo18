@@ -1,11 +1,11 @@
-package com.example.SecondSeminarKotlin.application
+package com.example.SecondSeminarKotlin.member.application
 
-import com.example.SecondSeminarKotlin.domain.Member
-import com.example.SecondSeminarKotlin.domain.SOPT
-import com.example.SecondSeminarKotlin.domain.repository.MemberJpaRepository
-import com.example.SecondSeminarKotlin.presentation.dto.request.MemberCreateRequest
-import com.example.SecondSeminarKotlin.presentation.dto.request.MemberProfileUpdateRequest
-import com.example.SecondSeminarKotlin.presentation.dto.response.MemberGetResponse
+import com.example.SecondSeminarKotlin.member.domain.Member
+import com.example.SecondSeminarKotlin.member.domain.SOPT
+import com.example.SecondSeminarKotlin.member.domain.MemberJpaRepository
+import com.example.SecondSeminarKotlin.member.presentation.dto.request.MemberCreateRequest
+import com.example.SecondSeminarKotlin.member.presentation.dto.request.MemberProfileUpdateRequest
+import com.example.SecondSeminarKotlin.member.presentation.dto.response.MemberGetResponse
 import jakarta.persistence.EntityNotFoundException
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service

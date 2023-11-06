@@ -1,4 +1,4 @@
-package com.example.SecondSeminarKotlin.domain
+package com.example.SecondSeminarKotlin.member.domain
 
 enum class Part(val value: String) {
     SERVER("서버"),

@@ -1,6 +1,5 @@
-package com.example.SecondSeminarKotlin.domain.repository
+package com.example.SecondSeminarKotlin.member.domain
 
-import com.example.SecondSeminarKotlin.domain.Member
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface MemberJpaRepository : JpaRepository<Member, Long>
