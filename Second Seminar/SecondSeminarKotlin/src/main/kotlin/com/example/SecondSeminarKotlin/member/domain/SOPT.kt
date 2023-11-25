@@ -1,4 +1,4 @@
-package com.example.SecondSeminarKotlin.domain
+package com.example.SecondSeminarKotlin.member.domain
 
 import jakarta.persistence.Embeddable
 import jakarta.persistence.EnumType

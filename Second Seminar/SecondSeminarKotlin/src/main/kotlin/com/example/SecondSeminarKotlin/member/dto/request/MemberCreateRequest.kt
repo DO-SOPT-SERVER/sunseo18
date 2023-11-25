@@ -1,6 +1,6 @@
-package com.example.SecondSeminarKotlin.presentation.dto.request
+package com.example.SecondSeminarKotlin.member.dto.request
 
-import com.example.SecondSeminarKotlin.domain.SOPT
+import com.example.SecondSeminarKotlin.member.domain.SOPT
 
 class MemberCreateRequest(
     val name: String,

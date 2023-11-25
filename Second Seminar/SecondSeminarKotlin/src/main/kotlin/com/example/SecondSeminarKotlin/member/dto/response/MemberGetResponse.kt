@@ -1,7 +1,7 @@
-package com.example.SecondSeminarKotlin.presentation.dto.response
+package com.example.SecondSeminarKotlin.member.dto.response
 
-import com.example.SecondSeminarKotlin.domain.Member
-import com.example.SecondSeminarKotlin.domain.SOPT
+import com.example.SecondSeminarKotlin.member.domain.Member
+import com.example.SecondSeminarKotlin.member.domain.SOPT
 
 class MemberGetResponse private constructor(
     val name: String,

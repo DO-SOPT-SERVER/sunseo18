@@ -1,9 +1,9 @@
-package com.example.SecondSeminarKotlin.presentation
+package com.example.SecondSeminarKotlin.member.presentation
 
-import com.example.SecondSeminarKotlin.application.MemberService
-import com.example.SecondSeminarKotlin.presentation.dto.request.MemberCreateRequest
-import com.example.SecondSeminarKotlin.presentation.dto.request.MemberProfileUpdateRequest
-import com.example.SecondSeminarKotlin.presentation.dto.response.MemberGetResponse
+import com.example.SecondSeminarKotlin.member.application.MemberService
+import com.example.SecondSeminarKotlin.member.dto.request.MemberCreateRequest
+import com.example.SecondSeminarKotlin.member.dto.request.MemberProfileUpdateRequest
+import com.example.SecondSeminarKotlin.member.dto.response.MemberGetResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.net.URI

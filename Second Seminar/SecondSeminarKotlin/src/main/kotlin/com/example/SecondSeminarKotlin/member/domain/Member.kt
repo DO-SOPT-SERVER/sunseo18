@@ -1,4 +1,4 @@
-package com.example.SecondSeminarKotlin.domain
+package com.example.SecondSeminarKotlin.member.domain
 
 import jakarta.persistence.Embedded
 import jakarta.persistence.Entity
