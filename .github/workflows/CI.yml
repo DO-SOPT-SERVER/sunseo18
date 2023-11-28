@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04 
+    env:
+      working-directory: Second Seminar/SecondSeminar
 
     steps: 
     - uses: actions/checkout@v3
@@ -19,10 +21,9 @@ jobs:
 
     - name: application.yaml 생성 및 빌드
       run: | 
-          cd Second\ Seminar/SecondSeminar
           echo "${{ secrets.APPLICATION }}" > ./application.yaml
 
           chmod +x gradlew
           ./gradlew build -x test
-
+      working-directory: ${{ env.working-directory }}
       shell: bash
