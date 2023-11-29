@@ -19,10 +19,14 @@ jobs:
         distribution: 'corretto'
         java-version: '17'
 
-    - name: application.yaml 생성 및 빌드
+    - name: application.yaml 생성
       run: | 
-          echo "${{ secrets.APPLICATION }}" > ./application.yaml
+          cd src/main/resources
+          echo "${{ secrets.APPLICATION }}" > ./application-deploy.yaml
+      working-directory: ${{ env.working-directory }}
 
+    - name: 빌드
+      run: |
           chmod +x gradlew
           ./gradlew build -x test
       working-directory: ${{ env.working-directory }}
