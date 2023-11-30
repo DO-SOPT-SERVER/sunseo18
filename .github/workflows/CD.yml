@@ -10,8 +10,9 @@ jobs:
     env:
       working-directory: Second Seminar/SecondSeminar
 
-    steps: 
-    - uses: actions/checkout@v3
+    steps:
+    - name: 체크아웃
+      uses: actions/checkout@v3
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -60,7 +61,7 @@ jobs:
         key: ${{ secrets.RELEASE_SERVER_KEY }}
         script: |
           cd ~
-	  ./deploy
+          ./deploy
 
   
     
