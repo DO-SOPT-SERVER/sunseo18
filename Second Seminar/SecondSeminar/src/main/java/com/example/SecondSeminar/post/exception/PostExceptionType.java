@@ -20,4 +20,5 @@ public enum PostExceptionType implements ExceptionType {
     public String message() {
         return message;
     }
+    
 }
