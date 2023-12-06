@@ -16,5 +16,3 @@ INSERT INTO category(CATEGORY_ID, NAME)
 VALUES (1, '일상'),
        (2, '여행'),
        (3, '공부');
-
--- dummy line for cd test

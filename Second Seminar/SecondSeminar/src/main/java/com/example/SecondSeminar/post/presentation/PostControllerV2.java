@@ -24,7 +24,7 @@ public class PostControllerV2 {
     public ResponseEntity<Void> createPostV2(@RequestHeader(CUSTOM_AUTH_ID) Long memberId,
                                              @RequestPart MultipartFile image, PostCreateRequest request) {
 
-        URI location = URI.create("/api/posts/v2" + postService.createV2(request, image, memberId));
+        URI location = URI.create("/api/posts/v2/" + postService.createV2(request, image, memberId));
         return ResponseEntity.created(location).build();
     }
 }
