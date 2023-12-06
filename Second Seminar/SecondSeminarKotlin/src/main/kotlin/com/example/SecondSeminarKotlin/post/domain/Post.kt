@@ -9,12 +9,16 @@ class Post(
     title: String,
     content: String,
     member: Member,
+    imageUrl: String?
 ) : BaseTimeEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0
 
     var title: String = title
+        protected set
+
+    var imageUrl: String? = imageUrl
         protected set
 
     @Column(columnDefinition = "TEXT")

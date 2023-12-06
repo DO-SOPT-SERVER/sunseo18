@@ -29,6 +29,7 @@ class PostService(
                 member = member,
                 title = request.title,
                 content = request.content,
+                imageUrl = null
             )
         )
 
