@@ -1,10 +1,11 @@
 package com.example.SecondSeminar.post.presentation;
 
-import com.example.SecondSeminar.post.dto.request.PostCreateRequest;
-import com.example.SecondSeminar.post.dto.response.PostGetResponse;
-import com.example.SecondSeminar.post.dto.request.PostUpdateRequest;
 import com.example.SecondSeminar.post.application.PostService;
+import com.example.SecondSeminar.post.dto.request.PostCreateRequest;
+import com.example.SecondSeminar.post.dto.request.PostUpdateRequest;
+import com.example.SecondSeminar.post.dto.response.PostGetResponse;
 import java.net.URI;
+import java.security.Principal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,14 +27,17 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping
-    public ResponseEntity<Void> createPost(@RequestHeader(CUSTOM_AUTH_ID) Long memberId,
-                                           @RequestBody PostCreateRequest request) {
+    public ResponseEntity<Void> createPost(@RequestBody PostCreateRequest request, Principal principal) {
+        Long memberId = Long.valueOf(principal.getName());
+
         URI location = URI.create("/api/post/" + postService.create(request, memberId));
         return ResponseEntity.created(location).build();
     }
 
     @GetMapping
-    public ResponseEntity<List<PostGetResponse>> getPostsByMemberId(@RequestHeader(CUSTOM_AUTH_ID) Long memberId) {
+    public ResponseEntity<List<PostGetResponse>> getPostsByMemberId(Principal principal) {
+        Long memberId = Long.valueOf(principal.getName());
+
         return ResponseEntity.ok(postService.getPostsByMemberId(memberId));
     }
 

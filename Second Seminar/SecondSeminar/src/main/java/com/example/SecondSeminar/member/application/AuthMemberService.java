@@ -43,7 +43,8 @@ public class AuthMemberService {
 
         Authentication authentication = new UserAuthentication(authMember.getId(), null, null);
 
-        String jwtToken = jwtProvider.generateToken(authentication, 1000L);
+        // 이거도 application.yaml로 해야됨
+        String jwtToken = jwtProvider.generateToken(authentication, 1000L * 24);
         return MemberSignInResponse.of(jwtToken);
     }
 
