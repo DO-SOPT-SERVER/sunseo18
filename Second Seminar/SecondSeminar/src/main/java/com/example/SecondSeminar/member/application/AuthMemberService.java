@@ -2,11 +2,11 @@ package com.example.SecondSeminar.member.application;
 
 import com.example.SecondSeminar.common.auth.JwtProvider;
 import com.example.SecondSeminar.common.auth.UserAuthentication;
-import com.example.SecondSeminar.common.exception.BaseCustomException;
 import com.example.SecondSeminar.member.domain.AuthMember;
 import com.example.SecondSeminar.member.domain.AuthMemberJpaRepository;
 import com.example.SecondSeminar.member.dto.request.AuthMemberRequest;
 import com.example.SecondSeminar.member.dto.response.MemberSignInResponse;
+import com.example.SecondSeminar.member.exception.MemberException;
 import com.example.SecondSeminar.member.exception.MemberExceptionType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -35,10 +35,10 @@ public class AuthMemberService {
 
     public MemberSignInResponse signIn(AuthMemberRequest request) {
         AuthMember authMember = authMemberJpaRepository.findByNickname(request.nickname())
-                .orElseThrow(() -> new BaseCustomException(MemberExceptionType.NOT_FOUND_MEMBER));
+                .orElseThrow(() -> new MemberException(MemberExceptionType.NOT_FOUND_MEMBER));
 
         if (!passwordEncoder.matches(request.password(), authMember.getPassword())) {
-            throw new BaseCustomException(MemberExceptionType.INCORRECT_PASSWORD);
+            throw new MemberException(MemberExceptionType.INCORRECT_PASSWORD);
         }
 
         Authentication authentication = new UserAuthentication(authMember.getId(), null, null);

@@ -1,6 +1,5 @@
 package com.example.SecondSeminar.member.presentation;
 
-import com.example.SecondSeminar.common.auth.JwtProvider;
 import com.example.SecondSeminar.member.application.AuthMemberService;
 import com.example.SecondSeminar.member.dto.request.AuthMemberRequest;
 import com.example.SecondSeminar.member.dto.response.MemberSignInResponse;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthMemberController {
 
     private final AuthMemberService authMemberService;
-    private final JwtProvider jwtProvider;
 
     @PostMapping("sign-up")
     public ResponseEntity<Void> signUp(@RequestBody AuthMemberRequest request) {
