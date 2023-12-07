@@ -38,7 +38,6 @@ public class JwtProvider {
                 .setClaims(claims)
                 .signWith(getSigningKey())
                 .compact();
-
     }
 
     private SecretKey getSigningKey() {

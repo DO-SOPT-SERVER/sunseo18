@@ -1,7 +1,9 @@
 package com.example.SecondSeminar.member.presentation;
 
+import com.example.SecondSeminar.common.auth.JwtProvider;
 import com.example.SecondSeminar.member.application.AuthMemberService;
 import com.example.SecondSeminar.member.dto.request.AuthMemberRequest;
+import com.example.SecondSeminar.member.dto.response.MemberSignInResponse;
 import java.net.URI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthMemberController {
 
     private final AuthMemberService authMemberService;
+    private final JwtProvider jwtProvider;
 
     @PostMapping("sign-up")
     public ResponseEntity<Void> signUp(@RequestBody AuthMemberRequest request) {
@@ -24,8 +27,7 @@ public class AuthMemberController {
     }
 
     @PostMapping("sign-in")
-    public ResponseEntity<Void> signIn(@RequestBody AuthMemberRequest request) {
-        authMemberService.signIn(request);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<MemberSignInResponse> signIn(@RequestBody AuthMemberRequest request) {
+        return ResponseEntity.ok(authMemberService.signIn(request));
     }
 }
