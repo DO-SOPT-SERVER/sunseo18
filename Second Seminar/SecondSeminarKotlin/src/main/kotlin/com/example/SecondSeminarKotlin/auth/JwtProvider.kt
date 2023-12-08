@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component
 import java.util.*
 import javax.crypto.SecretKey
 
+// 지금 파일 안에 클래스 하나 더 만들면 이거 접근 가능해서 클래스 안에서 선언하는게 나을듯..!!
 private const val MEMBER_ID = "memberId"
 
 @Component

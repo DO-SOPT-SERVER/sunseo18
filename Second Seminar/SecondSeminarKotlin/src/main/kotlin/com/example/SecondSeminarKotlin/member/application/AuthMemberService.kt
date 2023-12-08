@@ -30,7 +30,7 @@ class AuthMemberService(
 
     fun signIn(request: AuthMemberRequest): AuthMemberSigninResponse {
         val authMember = authMemberJpaRepository.findByNickname(nickname = request.nickname)
-            .orElseThrow { MemberException(MemberExceptionType.NOT_FOUND_MEMBER) }
+            ?: throw MemberException(MemberExceptionType.NOT_FOUND_MEMBER)
 
         if (!passwordEncoder.matches(request.password, authMember.password))
             throw MemberException(MemberExceptionType.INCORRECT_PASSWORD)
